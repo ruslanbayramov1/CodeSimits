@@ -10,6 +10,7 @@ using System.Security.Claims;
 
 namespace CodeSimits.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class StudentController : Controller
     {
         private readonly AppDbContext _context;
@@ -21,9 +22,21 @@ namespace CodeSimits.Areas.Admin.Controllers
         }
         
 
-        public IActionResult Index()
+        public async Task<IActionResult> IndexAsync()
         {
             var student = _context.Users.FirstOrDefault(n=>n.Id == ClaimTypes.NameIdentifier);
+
+          
+
+            //StudentIndex studentIndex = new StudentIndex 
+            //{
+            //    Username = student.UserName,
+            //    Name = student.Name,
+            //    Surname = student.Surname,
+            //    Email = student.Email,
+               
+            //};
+
             var grades = _context.Grades.Where(n=>n.StudentId == ClaimTypes.NameIdentifier).ToList();
 
             double a = 0;
@@ -34,6 +47,19 @@ namespace CodeSimits.Areas.Admin.Controllers
             }
 
             var overAll = a/grades.Count;
+
+
+            var course = await _context.Courses
+                .Where(u => u.UsersId == ClaimTypes.NameIdentifier)
+                .Select(u => new GetCourse
+                {
+                    Name = u.Name,
+                    Description = u.Description,
+                    Id = u.Id,
+                }).ToListAsync();
+
+
+            ViewBag.Grades = _context.Grades.Where(n => n.StudentId == ClaimTypes.NameIdentifier).ToList();
 
             ViewBag.OverAll = overAll;
             ViewBag.TotalGrades = grades.Count;
@@ -57,23 +83,14 @@ namespace CodeSimits.Areas.Admin.Controllers
         }
 
        
-        public async Task<IActionResult> GetGroup()
+       /* public async Task<IActionResult> GetGroup()
         {
 
-            var course = await _context.Courses
-                .Where(u => u.UsersId == ClaimTypes.NameIdentifier)
-                .Select(u => new GetCourse
-                {
-                    Name = u.Name,
-                    Description = u.Description,
-                    Id = u.Id,
-                }).ToListAsync();
-
-            ViewBag.Grades = _context.Grades.Where(n => n.StudentId == ClaimTypes.NameIdentifier).ToList();
+            
 
 
             return View(course);
-        }
+        }*/
 
         public async Task<IActionResult> GetGroupDetail(int id)
         {

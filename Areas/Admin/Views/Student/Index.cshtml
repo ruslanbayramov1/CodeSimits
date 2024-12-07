@@ -1,5 +1,91 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using CodeSimits.ViewModels;
+
+@model StudentIndex;
+
+<div class="sidebar-wrapper">
+    <div class="sidebar">
+        <div class="sidebar-item"><a href="person.html">My Info</a></div>
+        <button class="accordion-button" style="margin-top: 20px;">Management</button>
+
+         @* <div class="panel">
+             <div class="sidebar-item">
+                 <a href="student.html">
+                     <i class="fa-solid fa-graduation-cap"></i> Student
+                     Management
+                 </a>
+             </div>
+             <div class="sidebar-item">
+                 <a href="teacher.html">
+                     <i class="fa-solid fa-chalkboard-user"></i> Teacher
+                     Management
+                 </a>
+             </div>
+             <div class="sidebar-item">
+                 <a href="tutor.html">
+                     <i class="fa-solid fa-chalkboard-user"></i> Tutor
+                     Management
+                 </a>
+             </div>
+         </div> *@
+
+        <div class="sidebar-item"><a href="shedule.html">Lesson Shedules</a></div>
+        <button class="accordion-button-groups" style="margin-top: 20px;">Groups</button>
+        <div class="panel-groups">
+            @if (ViewBag.Grades != null)
+            {
+                foreach (var item in ViewBag.Grades)
+                {
+
+                    <div class="sidebar-item"><a asp-controller="Student" asp-action="GetGroupDetail" asp-route-id="@item.id">@item.Title</a></div>
+                }
+            }
+           
+        </div>
+    </div>
+    <div class="sidebar-content">
+                <form class="form">
+                    <h2>Register for Teacher</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" name="first-name" asp-for="Name" required disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" asp-for="Surname" required disabled>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                <input type="email" id="email" asp-for="Email" required disabled>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                <input type="text" id="username" asp-for="Username" required disabled>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                <input type="password" id="password" asp-for="Password" required >
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password" id="confirm-password" name="confirm-password" required>
+                        </div>
+                    </div>
+                   @*  <div class="form-group full-width">
+                        <label for="role">Select Role</label>
+                        <select id="role" name="role" required>
+                            <option value="admin">Admin</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="student">Student</option>
+                        </select>
+                    </div> *@
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </section>
+

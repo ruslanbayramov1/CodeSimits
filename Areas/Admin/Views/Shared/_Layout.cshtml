@@ -1,13 +1,40 @@
-﻿<!DOCTYPE html>
+﻿<html lang="en">
 
-<html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASBOARD</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+          integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+    <link rel="stylesheet" href="~/assets/css/global.css">
+    <link rel="stylesheet" href="~/assets/css/dasboard.css">
 </head>
+
 <body>
-    <div>
+    <section class="containes">
+        <div class="tutor-wrap"
+             style=" background-image:url(https://studyhub.themewant.com/wp-content/uploads/2024/04/instructor-cover.jpg)">
+            <div class="content">
+                <div class="user"
+                     style="background-image:url(https://secure.gravatar.com/avatar/75d23af433e0cea4c0e45a56dba18b30?s=300&d=mm&r=g)">
+                </div>
+                <div class="user-content">
+                    <h3>Admin admin</h3>
+                    <span>0 Course Enrolled • 0 Course Completed</span>
+                </div>
+            </div>
+        </div>
+
+       
         @RenderBody()
-    </div>
+
+
+
+            <script src="~/assets/js/global.js"></script>
+
 </body>
+
 </html>
