@@ -1,0 +1,638 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind+Mysuru:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#hero {
+  height: 50vh;
+  background-image: url(/assets/images/breadcumb-1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#hero .hero-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0px;
+}
+#hero .hero-wrapper .hero-desc {
+  color: white;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 35px;
+}
+#hero .hero-wrapper .hero-desc .hero-title {
+  font-size: 44px;
+}
+#hero .hero-wrapper .hero-desc .desc-two {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+}
+
+#university {
+  padding: 150px 0 50px 0;
+}
+#university .university-wrapper {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding-bottom: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 80px;
+}
+@media (max-width: 767px) {
+  #university .university-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+#university .university-wrapper .uni-title {
+  width: 40%;
+}
+@media (max-width: 767px) {
+  #university .university-wrapper .uni-title {
+    width: 100%;
+  }
+}
+#university .university-wrapper .uni-title h3 {
+  position: relative;
+  letter-spacing: 1.2px;
+  display: flex;
+  align-items: center;
+  font-size: 48px;
+  font-family: "Hind Mysuru", sans-serif;
+  line-height: 1.3;
+}
+@media (max-width: 767px) {
+  #university .university-wrapper .uni-title h3 {
+    font-size: 30px;
+  }
+}
+#university .university-wrapper .uni-title h3::after {
+  content: "";
+  width: 1px;
+  height: 120px;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  right: -10px;
+  top: -15px;
+}
+@media (max-width: 992px) {
+  #university .university-wrapper .uni-title h3::after {
+    height: 150px;
+  }
+}
+@media (max-width: 767px) {
+  #university .university-wrapper .uni-title h3::after {
+    width: 0;
+    height: 0;
+  }
+}
+#university .university-wrapper .uni-desc {
+  width: 60%;
+  font-family: "Inter", sans-serif;
+  color: #777777;
+  line-height: 1.8;
+  display: flex;
+  align-items: cenetr;
+}
+@media (max-width: 767px) {
+  #university .university-wrapper .uni-desc {
+    width: 100%;
+  }
+}
+@media (max-width: 992px) {
+  #university .university-wrapper .uni-desc {
+    line-height: 1.4;
+    font-size: 15px;
+  }
+}
+
+#graduate {
+  padding: 50px 0;
+}
+#graduate .graduate-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+}
+@media (max-width: 992px) {
+  #graduate .graduate-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+#graduate .graduate-wrapper .graduate-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#graduate .graduate-wrapper .graduate-right .graduate-cards {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+#graduate .graduate-wrapper .graduate-right .graduate-cards .graduate-card {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  width: 100%;
+  background-color: #36348e;
+  color: white;
+}
+#graduate .graduate-wrapper .graduate-right .graduate-cards .graduate-card .graduate-card-head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0px;
+}
+#graduate .graduate-wrapper .graduate-right .graduate-cards .graduate-card .graduate-card-head h2 {
+  font-size: 48px;
+  font-family: "Hind Mysuru", sans-serif;
+}
+#graduate .graduate-wrapper .graduate-right .graduate-cards .graduate-card .grad-desc {
+  font-family: "Inter", sans-serif;
+}
+
+#education {
+  padding: 60px 0;
+}
+#education .education-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  gap: 50px;
+}
+@media (max-width: 992px) {
+  #education .education-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+#education .education-wrapper .education-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#education .education-wrapper .education-right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 30px;
+}
+#education .education-wrapper .education-right h2 {
+  font-size: 40px;
+  letter-spacing: 1px;
+  font-family: "Hind Mysuru", sans-serif;
+}
+#education .education-wrapper .education-right .edu-desc {
+  color: #777777;
+  font-family: "Inter", sans-serif;
+}
+
+#percent {
+  padding: 50px 0;
+}
+@media (max-width: 767px) {
+  #percent {
+    background-color: #36348e;
+  }
+}
+#percent .percent-wrapper {
+  padding: 20px 0;
+  background-color: #36348e;
+  width: 80%;
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  #percent .percent-wrapper {
+    width: 100%;
+    padding: 0;
+  }
+}
+#percent .percent-wrapper .percent-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 767px) {
+  #percent .percent-wrapper .percent-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+#percent .percent-wrapper .percent-cards .percent-card {
+  border-right: 1px solid #a2a0a0;
+  padding: 15px 30px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (max-width: 767px) {
+  #percent .percent-wrapper .percent-cards .percent-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    border: none;
+  }
+}
+#percent .percent-wrapper .percent-cards .percent-card h2 {
+  font-size: 48px;
+  font-family: "Hind Mysuru", sans-serif;
+}
+#percent .percent-wrapper .percent-cards .percent-card span {
+  font-family: "Inter", sans-serif;
+}
+
+#mission {
+  padding: 80px 0;
+}
+#mission .mission h2 {
+  font-size: 48px;
+  font-family: "Hind Mysuru", sans-serif;
+  text-align: center;
+  margin: 50px 0;
+  color: #1f1f25;
+}
+#mission .mission .mission-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 992px) {
+  #mission .mission .mission-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+#mission .mission .mission-wrapper .mission-left {
+  padding-top: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+#mission .mission .mission-wrapper .mission-left .left {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  padding-right: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 30px;
+}
+@media (max-width: 992px) {
+  #mission .mission .mission-wrapper .mission-left .left {
+    padding: 0;
+    border: none;
+  }
+}
+#mission .mission .mission-wrapper .mission-left .left h3 {
+  font-size: 25px;
+  font-family: "Hind Mysuru", sans-serif;
+  position: relative;
+}
+@media (max-width: 767px) {
+  #mission .mission .mission-wrapper .mission-left .left h3 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+#mission .mission .mission-wrapper .mission-left .left h3::after {
+  content: "";
+  width: 70px;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 18px;
+  right: -84px;
+}
+@media (max-width: 767px) {
+  #mission .mission .mission-wrapper .mission-left .left h3::after {
+    width: 0;
+    height: 0;
+  }
+}
+#mission .mission .mission-wrapper .mission-left .left .desc {
+  text-align: end;
+  width: 60%;
+  color: #777777;
+  font-family: "Inter", sans-serif;
+}
+#mission .mission .mission-wrapper .mission-right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 80px;
+}
+@media (max-width: 992px) {
+  #mission .mission .mission-wrapper .mission-right {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0;
+  }
+}
+#mission .mission .mission-wrapper .mission-right .right {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 30px;
+}
+#mission .mission .mission-wrapper .mission-right .right h3 {
+  font-size: 25px;
+  font-family: "Hind Mysuru", sans-serif;
+  position: relative;
+}
+#mission .mission .mission-wrapper .mission-right .right h3::after {
+  content: "";
+  width: 70px;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 18px;
+  left: -84px;
+}
+@media (max-width: 767px) {
+  #mission .mission .mission-wrapper .mission-right .right h3::after {
+    width: 0;
+    height: 0;
+  }
+}
+#mission .mission .mission-wrapper .mission-right .right .desc {
+  text-align: end;
+  width: 60%;
+  color: #777777;
+  font-family: "Inter", sans-serif;
+}
+@media (max-width: 992px) {
+  #mission .mission .mission-wrapper .mission-right .right .desc {
+    text-align: center;
+  }
+}
+
+#campus {
+  padding-top: 50px;
+  padding-bottom: 200px;
+}
+#campus .campus-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+#campus .campus-wrapper h2 {
+  font-size: 48px;
+  font-family: "Hind Mysuru", sans-serif;
+  text-align: center;
+  margin: 50px 0;
+  color: #1f1f25;
+}
+#campus .campus-wrapper h2 .video-img {
+  width: 100%;
+  height: 100%;
+}
+#campus .campus-wrapper h2 .video-img img {
+  width: 100%;
+  height: 100%;
+}
+#campus .campus-wrapper .campus-desc {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  color: #777777;
+  font-family: "Inter", sans-serif;
+}
+#campus .campus-wrapper .campus-link a {
+  text-decoration: none;
+  color: #36348e;
+  font-family: "Inter", sans-serif;
+}
+
+#footer {
+  background-color: #181818;
+  padding: 200px 0 100px;
+  position: relative;
+}
+#footer #foot {
+  position: absolute;
+  width: 100%;
+  z-index: 500;
+  margin-top: 100px;
+  top: -40%;
+}
+#footer #foot .containes .bgimg {
+  height: 200px;
+  background: linear-gradient(0deg, rgba(38, 255, 0, 0.4), rgba(0, 255, 55, 0.6)), url(../images/breadcumb-1.png);
+  background-size: cover;
+}
+#footer .footer-text {
+  flex-wrap: wrap;
+  gap: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+#footer .footer-text .university {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#footer .footer-text .university .uni-logo {
+  cursor: pointer;
+  display: flex;
+  gap: 20px;
+}
+#footer .footer-text .university .uni-logo i {
+  font-size: 40px;
+}
+#footer .footer-text .university .uni-logo span {
+  color: green;
+}
+#footer .footer-text .university .uni-logo h3 {
+  color: white;
+}
+#footer .footer-text .university p {
+  color: gray;
+  font-size: 18px;
+  line-height: 20px;
+}
+#footer .footer-text .university .location-uni {
+  display: flex;
+  gap: 10px;
+  color: gray;
+}
+#footer .footer-text .university .location-uni i {
+  font-size: 20px;
+}
+#footer .footer-text .university .phone-uni {
+  display: flex;
+  gap: 10px;
+  color: gray;
+}
+#footer .footer-text .university .phone-uni i {
+  font-size: 20px;
+}
+#footer .footer-text .compus {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#footer .footer-text .compus h1 {
+  width: 200px;
+  color: white;
+  border-bottom: 1px solid white;
+}
+#footer .footer-text .compus .list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#footer .footer-text .compus .list ul li {
+  list-style: none;
+}
+#footer .footer-text .compus .list ul li a {
+  text-decoration: none;
+  color: gray;
+  font-size: 20px;
+}
+#footer .footer-text .compus .list ul li a:hover {
+  color: green;
+}
+#footer .footer-text .our-compus {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#footer .footer-text .our-compus h1 {
+  width: 200px;
+  color: white;
+  border-bottom: 1px solid white;
+}
+#footer .footer-text .our-compus .list ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#footer .footer-text .our-compus .list ul li {
+  list-style: none;
+}
+#footer .footer-text .our-compus .list ul li a {
+  text-decoration: none;
+  color: gray;
+  font-size: 20px;
+}
+#footer .footer-text .our-compus .list ul li a:hover {
+  color: green;
+}
+#footer .footer-text .post {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+#footer .footer-text .post h1 {
+  color: white;
+  border-bottom: 1px solid white;
+}
+#footer .footer-text .post .footer-img {
+  display: flex;
+  gap: 20px;
+}
+#footer .footer-text .post .footer-img img {
+  width: 80px;
+  height: 80px;
+}
+#footer .footer-text .post .footer-img .img-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#footer .footer-text .post .footer-img .img-text p {
+  color: gray;
+}
+#footer .footer-text .post .footer-img .img-text h3 {
+  width: 200px;
+  color: white;
+}
+
+@media (max-width: 910px) {
+  #foot {
+    width: 100%;
+  }
+  #foot .bgimg {
+    width: 100%;
+    margin: auto;
+  }
+}
+@media (max-width: 910px) {
+  .footer-text {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+}
+@media (max-width: 904px) {
+  .footer-text {
+    margin: 0 60%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+}
+#foot-bot {
+  color: white;
+  background-color: #181818;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}/*# sourceMappingURL=about.css.map */

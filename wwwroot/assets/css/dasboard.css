@@ -1,0 +1,373 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.tutor-wrap {
+  /* background-color: #7763e6; */
+  width: 100%;
+  height: 350px;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 50px;
+  border-radius: 15px;
+}
+
+.user {
+  padding: 10px;
+  border-radius: 50%;
+  border: 10px solid white;
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  width: 200px;
+  display: flex !important;
+  gap: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  color: #ffff;
+}
+
+.user-content h3 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+  color: #fff;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.user-content span {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 48px;
+  color: #fff;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* sidebar-content */
+
+.sidebar-wrapper {
+  display: grid;
+  gap: 3%;
+  grid-template-columns: 22% 75%;
+}
+
+.sidebar {
+  grid-column: 1 / 2;
+}
+
+.sidebar-content {
+  grid-column: 2 / 3;
+}
+
+.sidebar,
+.sidebar-content {
+  border: 1px solid #ddd8f9;
+  border-radius: 6px;
+  padding: 30px;
+}
+
+.sidebar-item a {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  padding: 10px;
+  display: block;
+  color: #737477;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  margin-top: 5px;
+}
+
+.accordion-button,
+.accordion-button-groups {
+    background-color: #f1f1f1;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+}
+
+.accordion-button:hover,
+.accordion-button-groups:hover {
+    background-color: #ddd;
+}
+
+.panel,
+.panel-groups {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.panel .sidebar-item,
+.panel-groups .sidebar-item {
+    text-decoration: none;
+    color: #737477;
+    font-family: "Poppins", sans-serif;
+    border-bottom: 1px solid #ddd8f9;
+}
+
+.panel .sidebar-item a,
+.panel-groups .sidebar-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.panel .sidebar-item:hover,
+.panel-groups .sidebar-item:hover {
+    background-color: #f1f1f1;
+}
+
+.sidebar-item {
+  border-bottom: 1px solid #ddd8f9;
+}
+
+.sidebar-item:hover a {
+  color: #7763e6;
+}
+
+.sidebar-item:last-child {
+  border: none;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 40px;
+}
+
+.form-group.full-width {
+  width: 100%;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #09a24f;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #078a3e;
+}
+
+
+
+
+.buttons-group{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.buttons-group button{
+  width: 48%;
+  background-color: #7763e6;
+}
+.buttons-group a{
+  width: 48%;
+
+}
+.buttons-group a button{
+  width: 100%;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 20px;
+}
+tr{
+  border-bottom: 1px solid #ccc;
+}
+th, td{
+  padding: 10px;
+}
+th{
+  background-color: #f1f1f1;
+}
+
+.accordion-button,
+.accordion-button-groups,
+.accordion-button-tasks {
+    background-color: #f1f1f1;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+}
+
+.accordion-button:hover,
+.accordion-button-groups:hover,
+.accordion-button-tasks:hover {
+    background-color: #ddd;
+}
+
+.panel,
+.panel-groups,
+.panel-tasks {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.panel .sidebar-item,
+.panel-groups .sidebar-item,
+.panel-tasks .task-item {
+    padding: 10px 0;
+    text-decoration: none;
+    color: #737477;
+    font-family: "Poppins", sans-serif;
+    border-bottom: 1px solid #ddd8f9;
+}
+
+.panel .sidebar-item a,
+.panel-groups .sidebar-item a,
+.panel-tasks .task-item label {
+    text-decoration: none;
+    color: inherit;
+}
+
+.panel .sidebar-item:hover,
+.panel-groups .sidebar-item:hover,
+.panel-tasks .task-item:hover {
+    background-color: #f1f1f1;
+}
+
+.panel-tasks .task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.panel-tasks .task-item input {
+    width: 10%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.panel-tasks button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #09a24f;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.panel-tasks button:hover {
+    background-color: #078a3e;
+
+}
+
+.material-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.material-list button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #09a24f;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.material-list button:hover {
+  background-color: #078a3e;
+}

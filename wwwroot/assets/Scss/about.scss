@@ -1,0 +1,626 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+// hind
+@import url("https://fonts.googleapis.com/css2?family=Hind+Mysuru:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+// My mixin
+@mixin flex($justify, $align, $direction: row, $gap: 0px) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
+}
+@mixin grid($repeat) {
+  display: grid;
+  grid-template-columns: $repeat;
+}
+@mixin responsive($breakpoints) {
+  @if $breakpoints ==small {
+    @media (max-width: 575px) {
+      @content;
+    }
+  }
+
+  @if $breakpoints ==medium {
+    @media (min-width: 576px) and (max-width: 767px) {
+      @content;
+    }
+  }
+  @if $breakpoints ==medium2 {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
+
+  @if $breakpoints ==large {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  }
+  @if $breakpoints ==large2 {
+    @media (max-width: 992px) {
+      @content;
+    }
+  }
+
+  @if $breakpoints ==desktop {
+    @media (min-width: 992px) and (max-width: 1200px) {
+      @content;
+    }
+  }
+}
+$inter-font: "Inter", sans-serif;
+$hind-font: "Hind Mysuru", sans-serif;
+// -----------------------------------
+// ! header
+
+// ! Hero
+#hero {
+  height: 50vh;
+  background-image: url(/assets/images/breadcumb-1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  .hero-wrapper {
+    width: 100%;
+    height: 100%;
+    @include flex(center, center);
+    .hero-desc {
+      color: white;
+      font-family: $inter-font;
+
+      @include flex(center, center, column, 35px);
+      .hero-title {
+        font-size: 44px;
+      }
+      .desc-two {
+        font-size: 20px;
+        @include flex(center, center, row, 15px);
+      }
+    }
+  }
+}
+
+// ! University
+#university {
+  padding: 150px 0 50px 0;
+  .university-wrapper {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    padding-bottom: 80px;
+    @include flex(flex-start, center, row, 80px);
+    @include responsive(medium2) {
+      @include flex(flex-start, flex-start, column, 20px);
+    }
+    .uni-title {
+      width: 40%;
+      @include responsive(medium2) {
+        width: 100%;
+      }
+      h3 {
+        position: relative;
+        letter-spacing: 1.2px;
+        display: flex;
+        align-items: center;
+        font-size: 48px;
+        font-family: "Hind Mysuru", sans-serif;
+        line-height: 1.3;
+        @include responsive(medium2) {
+          font-size: 30px;
+        }
+        &::after {
+          content: "";
+          width: 1px;
+          height: 120px;
+          background-color: rgba(0, 0, 0, 0.3);
+          position: absolute;
+          right: -10px;
+          top: -15px;
+          @include responsive(large2) {
+            height: 150px;
+          }
+          @include responsive(medium2) {
+            width: 0;
+            height: 0;
+          }
+        }
+      }
+    }
+    .uni-desc {
+      width: 60%;
+      font-family: $inter-font;
+      color: #777777;
+      line-height: 1.8;
+      display: flex;
+      align-items: cenetr;
+      @include responsive(medium2) {
+        width: 100%;
+      }
+      @include responsive(large2) {
+        line-height: 1.4;
+        font-size: 15px;
+      }
+    }
+  }
+}
+// ! gradution
+
+#graduate {
+  padding: 50px 0;
+  .graduate-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    @include responsive(large2) {
+      grid-template-columns: 1fr;
+    }
+    gap: 50px;
+    .graduate-left {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .graduate-right {
+      .graduate-cards {
+        @include flex(flex-start, center, column, 20px);
+        .graduate-card {
+          @include flex(center, flex-start, column, 10px);
+          padding: 15px;
+
+          width: 100%;
+          background-color: #36348e;
+          color: white;
+          .graduate-card-head {
+            width: 100%;
+            @include flex(space-between, center);
+            h2 {
+              font-size: 48px;
+              font-family: $hind-font;
+            }
+          }
+          .grad-desc {
+            font-family: $inter-font;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ! education
+#education {
+  padding: 60px 0;
+  .education-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    @include responsive(large2) {
+      grid-template-columns: 1fr;
+    }
+    gap: 50px;
+    .education-left {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .education-right {
+      @include flex(flex-start, flex-start, column, 30px);
+      h2 {
+        font-size: 40px;
+        letter-spacing: 1px;
+        font-family: $hind-font;
+      }
+      .edu-desc {
+        color: #777777;
+        font-family: $inter-font;
+      }
+    }
+  }
+}
+// ! percent
+#percent {
+  @include responsive(medium2) {
+    background-color: #36348e;
+  }
+  padding: 50px 0;
+  .percent-wrapper {
+    padding: 20px 0;
+    background-color: #36348e;
+    width: 80%;
+    @include responsive(medium2) {
+      width: 100%;
+      padding: 0;
+    }
+
+    margin: 0 auto;
+    .percent-cards {
+      @include grid(repeat(3, 1fr));
+      @include responsive(medium2) {
+        @include grid(1fr);
+        gap: 20px;
+      }
+      .percent-card {
+        border-right: 1px solid #a2a0a0;
+        padding: 15px 30px;
+
+        color: white;
+        @include flex(center, center, column, 20px);
+        @include responsive(medium2) {
+          @include flex(center, center, column, 10px);
+          padding: 0;
+          border: none;
+        }
+        h2 {
+          font-size: 48px;
+          font-family: $hind-font;
+        }
+        span {
+          font-family: $inter-font;
+        }
+      }
+    }
+  }
+}
+
+// ! mission
+#mission {
+  padding: 80px 0;
+  .mission {
+    h2 {
+      font-size: 48px;
+      font-family: $hind-font;
+      text-align: center;
+      margin: 50px 0;
+      color: #1f1f25;
+    }
+    .mission-wrapper {
+      width: 100%;
+      @include grid(repeat(2, 1fr));
+      @include responsive(large2) {
+        @include grid(1fr);
+        gap: 30px;
+      }
+
+      .mission-left {
+        padding-top: 50px;
+
+        @include flex(flex-start, center, column, 30px);
+        .left {
+          border-right: 1px solid rgba(0, 0, 0, 0.1);
+          padding-right: 80px;
+          @include flex(flex-start, flex-end, column, 30px);
+          @include responsive(large2) {
+            // @include flex(flex-start, center, column, 30px);
+            padding: 0;
+            border: none;
+          }
+          h3 {
+            font-size: 25px;
+            font-family: $hind-font;
+            position: relative;
+            @include responsive(medium2) {
+              @include flex(flex-start, center, column, 30px);
+            }
+
+            &::after {
+              content: "";
+              width: 70px;
+              height: 1px;
+              background-color: rgba(0, 0, 0, 0.1);
+              position: absolute;
+              top: 18px;
+              right: -84px;
+              @include responsive(medium2) {
+                width: 0;
+                height: 0;
+              }
+            }
+          }
+          .desc {
+            text-align: end;
+            width: 60%;
+            color: #777777;
+            font-family: $inter-font;
+          
+          }
+        }
+      }
+      .mission-right {
+        @include flex(flex-start, center, column, 30px);
+        @include responsive(large2) {
+          @include flex(flex-start, center, column, 30px);
+          padding: 0;
+        }
+        padding-left: 80px;
+        .right {
+          @include flex(flex-start, flex-start, column, 30px);
+          h3 {
+            font-size: 25px;
+            font-family: $hind-font;
+            position: relative;
+
+            &::after {
+              content: "";
+              width: 70px;
+              height: 1px;
+              background-color: rgba(0, 0, 0, 0.1);
+              position: absolute;
+              top: 18px;
+              left: -84px;
+              @include responsive(medium2) {
+                width: 0;
+                height: 0;
+              }
+            }
+          }
+          .desc {
+            text-align: end;
+            width: 60%;
+            color: #777777;
+            font-family: $inter-font;
+            @include responsive(large2) {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ! campus
+
+#campus {
+    padding-top: 50px;
+    padding-bottom: 200px;
+  .campus-wrapper {
+@include flex(flex-start,center,column,40px);
+    h2 {
+      font-size: 48px;
+      font-family: $hind-font;
+      text-align: center;
+      margin: 50px 0;
+      color: #1f1f25;
+      .video-img{
+        width: 100%;
+        height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+      }
+    }
+    .campus-desc{
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+        color: #777777;
+        font-family: $inter-font;
+    }
+    .campus-link{
+       a{
+        text-decoration: none;
+        color: #36348e;
+        font-family: $inter-font;
+       }
+    }
+  }
+}
+
+// ! footer
+
+#footer{
+    background-color: #181818;
+    padding: 200px 0 100px;
+position: relative;
+    #foot{
+        position: absolute;
+        width: 100%;
+        z-index: 500;
+        margin-top: 100px;
+        top: -40%;
+        .containes{
+            .bgimg{
+                height: 200px;
+        background:linear-gradient(0deg, rgba(38, 255, 0, 0.4), rgba(0, 255, 55, 0.6)), url(../images/breadcumb-1.png);
+      background-size:cover;
+            }
+        }
+        
+    }
+
+    .footer-text{
+    flex-wrap: wrap;
+gap: 30px;
+        display: flex;
+        justify-content: space-between;
+
+            .university{
+                width: 200px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+        
+                .uni-logo{
+                    cursor: pointer;
+                    display: flex;
+                    gap:20px;
+                    i{
+                        font-size: 40px;
+                    }
+                    span{
+                        color: green;
+                    }
+                    h3{
+                        color: white;
+                    }
+                }
+                p{
+                    color: gray;
+                    font-size: 18px;
+                    line-height: 20px;
+                }
+                .location-uni{
+                    display: flex;
+                    gap: 10px;
+                    color: gray;
+                    i{
+                        font-size: 20px;
+                    }
+                }
+                .phone-uni{
+                    display: flex;
+                    gap: 10px;
+                    color: gray;
+                    i{
+                        font-size: 20px;
+                    }
+                }
+            }
+        
+            .compus{
+                width: 200px;
+
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                h1{
+                    width: 200px;
+                    color: white;
+                    border-bottom: 1px solid white;
+                }
+                .list{
+                    ul{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        li{
+                            list-style: none;
+                            a{
+                                text-decoration: none;
+                                color: gray;
+                                font-size: 20px;
+                                &:hover{
+                                    color: green;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .our-compus{
+                width: 200px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                h1{
+                    width: 200px;
+                    color: white;
+                    border-bottom: 1px solid white;
+                }
+                .list{
+                    ul{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        li{
+                            list-style: none;
+                            a{
+                                text-decoration: none;
+                                color: gray;
+                                font-size: 20px;
+                                &:hover{
+                                    color: green;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .post{
+                width: 200px;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                h1{
+                    color: white;
+                    border-bottom: 1px solid white;
+                }
+                .footer-img{
+                    display: flex;
+                    gap: 20px;
+                    img{
+                        width: 80px;
+                        height: 80px;
+                    }
+                    .img-text{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        p{
+                            color: gray;
+                        }
+                        h3{
+                            width: 200px;
+                            color: white;
+                        }
+                    }
+                }
+            }
+    }
+}
+
+
+
+    @media(max-width:910px){
+        #foot{
+            width: 100%;
+            .bgimg{
+            width: 100%;
+                margin: auto;
+            }
+        }
+    }
+
+    @media(max-width:910px){
+        .footer-text{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           gap: 40px;
+            
+        }
+    }  
+      @media(max-width:904px){
+        .footer-text{
+            margin: 0 60%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           gap: 40px;
+            
+        }
+    }
+
+
+    #foot-bot{
+        color: white;
+        background-color: #181818;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+    }

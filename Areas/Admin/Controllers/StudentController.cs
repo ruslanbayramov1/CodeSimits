@@ -24,9 +24,19 @@ namespace CodeSimits.Areas.Admin.Controllers
         public IActionResult Index()
         {
             var student = _context.Users.FirstOrDefault(n=>n.Id == ClaimTypes.NameIdentifier);
-            var tasks = _context.Tasks.FirstOrDefault();
+            var grades = _context.Grades.Where(n=>n.StudentId == ClaimTypes.NameIdentifier).ToList();
 
+            double a = 0;
 
+            foreach (var item in grades)
+            {
+                a += item.GradePoint;
+            }
+
+            var overAll = a/grades.Count;
+
+            ViewBag.OverAll = overAll;
+            ViewBag.TotalGrades = grades.Count;
             return View(student);
         }
 
@@ -41,10 +51,7 @@ namespace CodeSimits.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Update(AppUser user) 
         {
-
-
             _context.Users.Update(user);
-
 
             return RedirectToAction("Index");
         }
