@@ -7,16 +7,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\emty.cs" />
+    <Compile Remove="Helpers\emty.cs" />
+    <Compile Remove="ViewModels\emty.cs" />
+    <Compile Remove="Views\emty.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\emty.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Areas\Admin\Controllers\" />
-    <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Helpers\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Contexts\" />
-    <Folder Include="Views\" />
-    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Controllers\emty.cs" />
+    <None Include="Extensions\emty.cs" />
+    <None Include="Helpers\emty.cs" />
+    <None Include="ViewModels\emty.cs" />
+    <None Include="Views\emty.cs" />
+    <None Include="wwwroot\emty.cs" />
   </ItemGroup>
 
   <ItemGroup>
