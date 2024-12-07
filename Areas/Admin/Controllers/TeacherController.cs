@@ -10,6 +10,12 @@ namespace CodeSimits.Areas.Admin.Controllers
 {
     public class TeacherController(AppDbContext _context) : Controller
     {
+
+        public async Task<IActionResult> Home()
+        {
+            return View();
+        }
+
         public async Task<IActionResult> GetGroup()
         {
 

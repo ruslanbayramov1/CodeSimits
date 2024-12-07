@@ -34,6 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Areas\Admin\Views\Teacher\Index.cshtml" />
     <None Include="Controllers\emty.cs" />
     <None Include="Helpers\emty.cs" />
     <None Include="ViewModels\emty.cs" />
@@ -49,10 +50,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Admin\Views\" />
   </ItemGroup>
 
 </Project>
