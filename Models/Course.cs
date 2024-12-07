@@ -4,8 +4,8 @@
     {
         public string Name { get; set; }
 
-        public string UserId { get; set; }
-        public AppUser User { get; set; }
+        public string UsersId { get; set; }
+        public AppUser Users { get; set; }
 
         public string Description { get; set; }
 

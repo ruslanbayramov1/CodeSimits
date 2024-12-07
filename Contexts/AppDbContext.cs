@@ -24,5 +24,10 @@ public class AppDbContext : IdentityDbContext<AppUser>
         builder.ApplyConfigurationsFromAssembly(typeof(ClassTaskConfiguration).Assembly);
         builder.ApplyConfigurationsFromAssembly(typeof(CourseConfiguration).Assembly);
         builder.ApplyConfigurationsFromAssembly(typeof(MaterialConfiguration).Assembly);
+
+
+
+        base.OnModelCreating(builder);
     }
 }
+    

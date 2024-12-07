@@ -8,10 +8,10 @@ namespace CodeSimits.Configurations
     {
         public void Configure(EntityTypeBuilder<Course> builder)
         {
-            builder.HasMany(e => e.Enrollments)
-                .WithOne(e => e.Course)
-                .HasForeignKey(e => e.CourseId)
-                .OnDelete(DeleteBehavior.Restrict);
+            //builder.HasMany(e => e.Enrollments)
+            //    .WithOne(e => e.Course)
+            //    .HasForeignKey(e => e.CourseId)
+            //    .OnDelete(DeleteBehavior.Cascade);
 
 
             builder.HasMany(e => e.Materials)

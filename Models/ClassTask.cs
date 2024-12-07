@@ -5,8 +5,8 @@
         public string Title { get; set; }
         public string Description { get; set; }
 
-        public int MaterialId { get; set; }
-        public Material Material { get; set; }
+        public int MaterialsId { get; set; }
+        public Material Materials { get; set; }
 
         public string Type { get; set; }
 
