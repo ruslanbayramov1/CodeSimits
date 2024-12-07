@@ -15,14 +15,11 @@ namespace CodeSimits.Configurations
                 .HasForeignKey(e => e.StudentId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasMany(e => e.Enrollments)
-                .WithOne(e => e.Student)
-                .HasForeignKey(e => e.StudentId)
-                .OnDelete(DeleteBehavior.Restrict);
+
 
             builder.HasMany(e => e.Courses)
-                .WithOne(e => e.User)
-                .HasForeignKey(e => e.UserId)
+                .WithOne(e => e.Users)
+                .HasForeignKey(e => e.UsersId)
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }

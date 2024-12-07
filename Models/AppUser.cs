@@ -4,6 +4,8 @@ namespace CodeSimits.Models
 {
     public class AppUser : IdentityUser
     {
+
+        public string Id {  get; set; }
         public string? ProfilePhoto { get; set; }
         public DateTime CreatedAt { get; set; }
 

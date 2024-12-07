@@ -9,8 +9,8 @@ namespace CodeSimits.Configurations
         public void Configure(EntityTypeBuilder<Material> builder)
         {
             builder.HasMany(e => e.ClassTasks)
-                .WithOne(e => e.Material)
-                .HasForeignKey(e => e.Material)
+                .WithOne(e => e.Materials)
+                .HasForeignKey(e => e.MaterialsId)
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }
