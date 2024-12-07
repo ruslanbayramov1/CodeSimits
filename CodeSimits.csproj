@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Areas\**" />
+    <Content Remove="Areas\**" />
+    <EmbeddedResource Remove="Areas\**" />
+    <None Remove="Areas\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Controllers\emty.cs" />
     <Compile Remove="Helpers\emty.cs" />
     <Compile Remove="ViewModels\emty.cs" />
@@ -18,13 +25,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Controllers\" />
-    <Folder Include="Areas\Admin\Views\" />
+    <Compile Include="Areas\Admin\Controllers\TeacherController.cs" />
+    <Compile Include="Areas\Admin\ViewModel\Teacher\CeateMaterialVM.cs" />
+    <Compile Include="Areas\Admin\ViewModel\Teacher\GetCourse.cs" />
+    <Compile Include="Areas\Admin\ViewModel\Teacher\GetMaterial.cs" />
+    <Compile Include="Areas\Admin\ViewModel\Teacher\GetStudent.cs" />
+    <Compile Include="Areas\Admin\ViewModel\Teacher\GetTask.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Controllers\emty.cs" />
-    <None Include="Extensions\emty.cs" />
     <None Include="Helpers\emty.cs" />
     <None Include="ViewModels\emty.cs" />
     <None Include="Views\emty.cs" />
@@ -39,6 +49,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Views\" />
   </ItemGroup>
 
 </Project>
